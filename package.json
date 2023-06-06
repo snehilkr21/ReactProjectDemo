@@ -4,6 +4,8 @@
   "description": "learning react",
   "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/snehilkr21/ReactProjectDemo#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.9.1",
     "process": "^0.11.10"
   },
@@ -25,6 +29,6 @@
     "react-dom": "^18.2.0"
   },
   "browserslist": [
-  "last 2 versions"
+    "last 2 versions"
   ]
 }
