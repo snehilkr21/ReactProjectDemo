@@ -1,9 +1,12 @@
+import Logo from "../assets/img/foodvilla.png"
+import { Link } from "react-router-dom"
 const Title =() =>{
     return(
         <a href="/">
             <img
             className = 'logo'
-            src = "https://lh3.googleusercontent.com/p/AF1QipMf9w4RomHXrUkQKvrxtPdjp3SLadP05HDzXlH2=w1080-h608-p-no-v0"
+            // src = "https://lh3.googleusercontent.com/p/AF1QipMf9w4RomHXrUkQKvrxtPdjp3SLadP05HDzXlH2=w1080-h608-p-no-v0"
+            src={Logo}
             alt = "Food Villa"
             />
         </a>
@@ -16,10 +19,10 @@ const Header = () =>{
         <Title />
         <div className='nav-item'>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact Us</li>
-                <li>Cart</li>
+                <li> <Link to="/">Home</Link> </li>
+                <li> <Link to="/about">About</Link> </li>
+                <li> <Link to="/contact">Contact Us</Link> </li>
+                <li> <Link to="/cart">Cart</Link> </li>
             </ul>
         </div>
         </div>

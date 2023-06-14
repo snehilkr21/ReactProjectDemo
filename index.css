@@ -13,10 +13,12 @@
 .nav-item > ul {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .nav-item > ul > li {
     margin: 10px;
+    
 } 
 
 .card {
@@ -33,4 +35,20 @@
 .ResturantList {
     display: flex;
     flex-wrap: wrap;
+    margin: 100px;
+}
+
+.shimmer-card{
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    margin: 10px;
+}
+
+.error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
 }
