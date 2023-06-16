@@ -26,6 +26,7 @@
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
+    height:300px
 }
 
 .card > img {
@@ -35,7 +36,8 @@
 .ResturantList {
     display: flex;
     flex-wrap: wrap;
-    margin: 100px;
+    margin: 10 100px;
+    
 }
 
 .shimmer-card{
