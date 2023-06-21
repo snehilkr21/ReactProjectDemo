@@ -4,7 +4,7 @@ const Title =() =>{
     return(
         <a href="/">
             <img
-            className = 'logo'
+            className ="h-28 pl-3"
             // src = "https://lh3.googleusercontent.com/p/AF1QipMf9w4RomHXrUkQKvrxtPdjp3SLadP05HDzXlH2=w1080-h608-p-no-v0"
             src={Logo}
             alt = "Food Villa"
@@ -15,15 +15,15 @@ const Title =() =>{
     
 const Header = () =>{
     return(
-        <div className='header'>
+        <div className='flex justify-between bg-pink-50 shadow-lg'>
         <Title />
-        <div className='nav-item'>
-            <ul>
-                <li> <Link to="/">Home</Link> </li>
-                <li> <Link to="/about">About</Link> </li>
-                <li> <Link to="/contact">Contact Us</Link> </li>
-                <li> <Link to="/cart">Cart</Link> </li>
-                <li> <Link to="/instamart">Insta-Mart</Link> </li>
+        <div className='nav-item pr-4'>
+            <ul className="flex py-10">
+                <li className="px-2"> <Link to="/">Home</Link> </li>
+                <li className="px-2"> <Link to="/about">About</Link> </li>
+                <li className="px-2"> <Link to="/contact">Contact Us</Link> </li>
+                <li className="px-2"> <Link to="/cart">Cart</Link> </li>
+                <li className="px-2"> <Link to="/instamart">Insta-Mart</Link> </li>
             </ul>
         </div>
         </div>
