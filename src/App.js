@@ -28,7 +28,7 @@
 
 
 //////////////////////////////////////////////////////////////
-import React,{lazy,Suspense} from 'react'
+import React,{lazy,Suspense, useState} from 'react'
 import ReactDOM  from 'react-dom/client'
 import Header from "./components/Header"
 import Footer from './components/Footer'
@@ -36,17 +36,24 @@ import Body from './components/Body'
 import About from './components/About'
 import Error from './components/Error'
 import Contact from './components/Contact'
-import { createBrowserRouter , Outlet, RouterProvider} from 'react-router-dom'
+import { createBrowserRouter , Outlet, RouterProvider, UNSAFE_RouteContext} from 'react-router-dom'
 import ResturantMenu from './components/ResturantMenu'
 import Profile from './components/Profile'
 import Shimmer from './components/Shimmer'
 const Instamart = lazy(()=>import("./components/Instamart")) 
+import userContext from './utils/UserContext'
 const AppLayout = () =>{
+  const [userData,setUserData]=useState({
+    name:"snehil",
+    email:"xyz@gmail.com"
+  })
     return(
         <>
+        <userContext.Provider value={{user:userData,setUserData:setUserData}}>
           <Header/>
           <Outlet/>
           <Footer/>
+          </userContext.Provider>
         </>
     )
 }
