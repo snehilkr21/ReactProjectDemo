@@ -1,5 +1,6 @@
 import Logo from "../assets/img/foodvilla.png"
 import { Link } from "react-router-dom"
+import { useSelector } from "react-redux/es/hooks/useSelector"
 const Title =() =>{
     return(
         <a href="/">
@@ -14,6 +15,7 @@ const Title =() =>{
 }
     
 const Header = () =>{
+    const cartItems = useSelector(store => store.cart.item)
     return(
         <div className='flex justify-between bg-pink-50 shadow-lg'>
         <Title />
@@ -22,8 +24,8 @@ const Header = () =>{
                 <li className="px-2"> <Link to="/">Home</Link> </li>
                 <li className="px-2"> <Link to="/about">About</Link> </li>
                 <li className="px-2"> <Link to="/contact">Contact Us</Link> </li>
-                <li className="px-2"> <Link to="/cart">Cart</Link> </li>
-                <li className="px-2"> <Link to="/instamart">Insta-Mart</Link> </li>
+                <li className="px-2"> <Link to="/cart">Cart {cartItems?.length}</Link> </li>
+                {/* <li className="px-2"> <Link to="/instamart">Insta-Mart</Link> </li> */}
             </ul>
         </div>
         </div>
