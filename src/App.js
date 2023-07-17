@@ -44,7 +44,7 @@ const Instamart = lazy(()=>import("./components/Instamart"))
 import userContext from './utils/UserContext'
 import { Provider } from 'react-redux'
 import Store from "./utils/store"
-import Card from './components/Crad'
+import Card from './components/Crat'
 const AppLayout = () =>{
   const [userData,setUserData]=useState({
     name:"snehil",

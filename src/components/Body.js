@@ -19,9 +19,10 @@ const Body = () =>{
       setFilteredResturant(json?.data?.cards[2]?.data?.data?.cards)
     }
     function searchFilter(searchInput,resturantList){
-      return resturantList.filter((data)=>{
-        return data?.name?.toLowerCase()?.includes(searchInput?.toLowerCase())
+      let temp= resturantList.filter((data)=>{
+         return data?.data?.name?.toLowerCase()?.includes(searchInput?.toLowerCase())
       })
+      return temp
     }
 
     useEffect(()=>{
@@ -46,15 +47,16 @@ const Body = () =>{
                   value={searchInput} 
                   onChange={(e)=>setSearchInput(e.target.value)}
                 />
-                <button className="search-btn p-2 m-2 bg-purple-600 text-white rounded-lg" onClick={()=>{
+                <button className="search-btn p-2 m-2 bg-purple-600 text-white rounded-lg"  data-testid="search-btn" onClick={()=>{
                     let data = searchFilter(searchInput,allResturantList)
                     setFilteredResturant(data)
+                    
                 }
                 }
                 >Search</button>
             </div>
             { filteredResturant?.length !==0 ? 
-            <div className="ResturantList flex flex-wrap px-[50px]">
+            <div className="ResturantList flex flex-wrap px-[50px]" data-testid="rest-list">
             {filteredResturant.map((item,index)=>{
                 return(
                   <Link to={`/resturant/${item.data.id}`} key={`${item.data.name}+${index}`}>
@@ -64,7 +66,7 @@ const Body = () =>{
                 )
             })}
             </div>
-            : <h1>No restaurants found</h1>}
+            : <h1 className="flex item-center justify-center">No restaurants found</h1>}
             
             </>
         );
