@@ -14,9 +14,9 @@ const Body = () =>{
     async function ResturantList(){
       let data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5940947&lng=85.1375645&page_type=DESKTOP_WEB_LISTING")
       let json = await data.json()
-      console.log("sffew",json)
-      setAllResturantList(json?.data?.cards[2]?.data?.data?.cards)
-      setFilteredResturant(json?.data?.cards[2]?.data?.data?.cards)
+      console.log("sffew",json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
+      setAllResturantList(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
+      setFilteredResturant(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
     }
     function searchFilter(searchInput,resturantList){
       let temp= resturantList.filter((data)=>{
@@ -59,8 +59,8 @@ const Body = () =>{
             <div className="ResturantList flex flex-wrap px-[50px]" data-testid="rest-list">
             {filteredResturant.map((item,index)=>{
                 return(
-                  <Link to={`/resturant/${item.data.id}`} key={`${item.data.name}+${index}`}>
-                   <ResturantCard {...item.data} />
+                  <Link to={`/resturant/${item.info.id}`} key={`${item.info.name}+${index}`}>
+                   <ResturantCard {...item.info} />
                   </Link>
                   
                 )
